@@ -7,7 +7,6 @@ public class Round {
     private int roundNumber;
     private Map<Player, List<Integer>> diceThrowMap;
 
-
     public int getRoundNumber() {
         return roundNumber;
     }
