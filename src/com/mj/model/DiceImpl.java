@@ -1,10 +1,10 @@
-package com.mj;
+package com.mj.service;
 
 import java.util.Random;
 
-public class DiceImpl implements Dice{
+public class DiceImpl implements Dice {
     @Override
-    public int rollADice(int point) {
+    public int rollDice(int point) {
         Random random = new Random();
         return  random.nextInt(point)+1;
     }
