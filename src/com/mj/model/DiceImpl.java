@@ -1,11 +1,19 @@
-package com.mj.service;
+package com.mj.model;
+
+import com.mj.model.Dice;
 
 import java.util.Random;
 
 public class DiceImpl implements Dice {
+    private int maxPoint;
+
+    public DiceImpl(int maxPoint) {
+        this.maxPoint = maxPoint;
+    }
+
     @Override
-    public int rollDice(int point) {
+    public int diceRoll() {
         Random random = new Random();
-        return  random.nextInt(point)+1;
+        return random.nextInt(maxPoint) + 1;
     }
 }
