@@ -1,5 +1,5 @@
-package com.mj.service;
+package com.mj.model;
 
 public interface Dice {
-    int rollDice (int point);
+    int diceRoll();
 }
