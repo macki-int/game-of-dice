@@ -21,20 +21,24 @@ public class Main {
         ScoreTable scoreTable = new ScoreTable();
         PlayImpl playImpl = new PlayImpl();
 
-        Round round = new Round();
-        Map<Player, List<Integer>> diceThrowMap = new HashMap<>();
 
         for (int i = 1; i <= 5; i++) {
-                round.setRoundNumber(i);
+            Round round = new Round();
+            Map<Player, List<Integer>> throwMap = new HashMap<>();
+
+            round.setRoundNumber(i);
 
             for (Player player: playerList) {
-                diceThrowMap.put(player, playImpl.playDice());
+                throwMap.put(player, playImpl.playDice());
             }
-            round.setDiceThrowMap(diceThrowMap);
-            diceThrowMap.clear();
+            round.setDiceThrowMap(throwMap);
             scoreTable.addRoundToList(round);
+//            throwMap.clear();
         }
-
+        for (Round r: scoreTable.getRoundList()) {
+            System.out.println(r.getRoundNumber());
+            System.out.println(r.getDiceThrowMap().toString());
+        }
 
 //        for (int i = 1; i <= 2; i++) {
 //            int valueDiceOne = dice.diceRoll();
