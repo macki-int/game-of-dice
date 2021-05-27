@@ -1,6 +1,6 @@
-package com.mj.model;
+package com.mj.service;
 
-import com.mj.model.Dice;
+import com.mj.service.Dice;
 
 import java.util.Random;
 
