@@ -21,33 +21,22 @@ public class Main {
         ScoreTable scoreTable = new ScoreTable();
         PlayImpl playImpl = new PlayImpl();
 
-        Round round = new Round();
-        Map<Player, List<Integer>> diceThrowMap = new HashMap<>();
 
         for (int i = 1; i <= 5; i++) {
-                round.setRoundNumber(i);
+            Round round = new Round();
+            Map<Player, List<Integer>> diceThrowMap = new HashMap<>();
+
+            round.setRoundNumber(i);
 
             for (Player player: playerList) {
                 diceThrowMap.put(player, playImpl.playDice());
             }
             round.setDiceThrowMap(diceThrowMap);
-            diceThrowMap.clear();
             scoreTable.addRoundToList(round);
         }
 
-
-//        for (int i = 1; i <= 2; i++) {
-//            int valueDiceOne = dice.diceRoll();
-//            int valueDiceTwo = dice.diceRoll();
-//
-//            playerScore += valueDiceOne + valueDiceTwo;
-//
-//            System.out.println(valueDiceOne + " " + valueDiceTwo);
-//        }
-//        playerList.get(0).getScore().add(playerScore);
-//
-//        for (Integer score : playerList.get(0).getScore()) {
-//            System.out.println("wynik: " + score);
-//        }
+        for (Round r: scoreTable.getRoundList()) {
+            System.out.println(r.getRoundNumber() + " " + r.getDiceThrowMap());
+        }
     }
 }
