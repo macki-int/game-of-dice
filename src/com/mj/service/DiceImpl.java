@@ -1,6 +1,5 @@
 package com.mj.service;
 
-import com.mj.service.Dice;
 
 import java.util.Random;
 
