@@ -38,10 +38,6 @@ public class Main {
             scoreTable.addRoundToList(round);
         }
 
-        for (Round r: scoreTable.getRoundList()) {
-            System.out.println(r.getRoundNumber());
-            System.out.println(r.getDiceThrowMap().toString());
-        }
 
         for (Round r: scoreTable.getRoundList()) {
             System.out.println(r.getRoundNumber() + " " + r.getDiceThrowMap());
