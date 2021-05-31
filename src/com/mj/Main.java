@@ -24,34 +24,27 @@ public class Main {
 
         for (int i = 1; i <= 5; i++) {
             Round round = new Round();
-            Map<Player, List<Integer>> throwMap = new HashMap<>();
+
+            Map<Player, List<Integer>> diceThrowMap = new HashMap<>();
+
 
             round.setRoundNumber(i);
 
             for (Player player: playerList) {
-                throwMap.put(player, playImpl.playDice());
+                diceThrowMap.put(player, playImpl.playDice());
             }
-            round.setDiceThrowMap(throwMap);
+
+            round.setDiceThrowMap(diceThrowMap);
             scoreTable.addRoundToList(round);
-//            throwMap.clear();
         }
+
         for (Round r: scoreTable.getRoundList()) {
             System.out.println(r.getRoundNumber());
             System.out.println(r.getDiceThrowMap().toString());
         }
 
-//        for (int i = 1; i <= 2; i++) {
-//            int valueDiceOne = dice.diceRoll();
-//            int valueDiceTwo = dice.diceRoll();
-//
-//            playerScore += valueDiceOne + valueDiceTwo;
-//
-//            System.out.println(valueDiceOne + " " + valueDiceTwo);
-//        }
-//        playerList.get(0).getScore().add(playerScore);
-//
-//        for (Integer score : playerList.get(0).getScore()) {
-//            System.out.println("wynik: " + score);
-//        }
+        for (Round r: scoreTable.getRoundList()) {
+            System.out.println(r.getRoundNumber() + " " + r.getDiceThrowMap());
+        }
     }
 }
