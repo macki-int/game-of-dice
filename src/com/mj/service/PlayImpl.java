@@ -14,7 +14,6 @@ public class PlayImpl implements Play {
             sumThrowDice = diceThrow();
             sumThrowDice += diceThrow();
             numbers.add(sumThrowDice);
-            sumThrowDice = 0;
         }
         return numbers;
     }
