@@ -1,5 +1,5 @@
 package com.mj.service;
 
 public interface SumDicesChecker {
-    public int check ();
+    public void check (int sum, int i);
 }
