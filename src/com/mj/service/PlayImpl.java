@@ -14,6 +14,20 @@ public class PlayImpl implements Play {
             sumThrowDice = diceThrow();
             sumThrowDice += diceThrow();
             numbers.add(sumThrowDice);
+            if (i == 1) {
+                if (sumThrowDice == 7 || sumThrowDice == 11) {
+                    return numbers;
+                } else if (sumThrowDice == 1 || sumThrowDice == 12) {
+                    numbers.add(48);
+                    return numbers;
+                }
+            }
+
+            if (sumThrowDice == 5) {
+                return numbers;
+            } else {
+                numbers.add(sumThrowDice / i);
+            }
         }
         return numbers;
     }
