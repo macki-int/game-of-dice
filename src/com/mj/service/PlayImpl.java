@@ -9,25 +9,20 @@ public class PlayImpl implements Play {
     public List<Integer> playDice() {
         List<Integer> numbers = new ArrayList<>();
 
+        SumDicesCheckerImpl sumDicesChecker = new SumDicesCheckerImpl();
+
         int sumThrowDice = 0;
         for (int i = 1; i <= 10; i++) {
             sumThrowDice = diceThrow();
             sumThrowDice += diceThrow();
-            numbers.add(sumThrowDice);
-            if (i == 1) {
-                if (sumThrowDice == 7 || sumThrowDice == 11) {
-                    return numbers;
-                } else if (sumThrowDice == 1 || sumThrowDice == 12) {
-                    numbers.add(48);
-                    return numbers;
-                }
-            }
 
-            if (sumThrowDice == 5) {
+            sumDicesChecker.check(sumThrowDice, i);
+
+            if(sumDicesChecker.isFinishTour()) {
+                numbers.add(sumDicesChecker.getSumThrowDice());
                 return numbers;
-            } else {
-                numbers.add(sumThrowDice / i);
             }
+            numbers.add(sumDicesChecker.getSumThrowDice());
         }
         return numbers;
     }
