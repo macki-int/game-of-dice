@@ -21,12 +21,10 @@ public class Main {
         ScoreTable scoreTable = new ScoreTable();
         PlayImpl playImpl = new PlayImpl();
 
-
         for (int i = 1; i <= 5; i++) {
             Round round = new Round();
 
             Map<Player, List<Integer>> diceThrowMap = new HashMap<>();
-
 
             round.setRoundNumber(i);
 
@@ -36,11 +34,6 @@ public class Main {
 
             round.setDiceThrowMap(diceThrowMap);
             scoreTable.addRoundToList(round);
-        }
-
-        for (Round r: scoreTable.getRoundList()) {
-            System.out.println(r.getRoundNumber());
-            System.out.println(r.getDiceThrowMap().toString());
         }
 
         for (Round r: scoreTable.getRoundList()) {
