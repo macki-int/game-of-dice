@@ -23,16 +23,16 @@ public class Main {
 
         for (int i = 1; i <= 5; i++) {
             Round round = new Round();
-
-            Map<Player, List<Integer>> diceThrowMap = new HashMap<>();
-
             round.setRoundNumber(i);
 
+            Map<Player, List<Integer>> diceThrowResultMap = new HashMap<>();
+
             for (Player player: playerList) {
-                diceThrowMap.put(player, playImpl.playDice());
+                List<Integer> playResultList = playImpl.playDice();
+                diceThrowResultMap.put(player, playResultList);
             }
 
-            round.setDiceThrowMap(diceThrowMap);
+            round.setDiceThrowMap(diceThrowResultMap);
             scoreTable.addRoundToList(round);
         }
 
