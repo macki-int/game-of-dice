@@ -3,6 +3,7 @@ package com.mj;
 import com.mj.model.Player;
 import com.mj.model.Round;
 import com.mj.model.ScoreTable;
+import com.mj.service.Play;
 import com.mj.service.PlayImpl;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ public class Main {
         playerList.add(new Player("drugi"));
 
         ScoreTable scoreTable = new ScoreTable();
-        PlayImpl playImpl = new PlayImpl();
+        Play playImpl = new PlayImpl();
 
         for (int i = 1; i <= 5; i++) {
             Round round = new Round();
