@@ -26,14 +26,14 @@ public class Main {
             Round round = new Round();
             round.setRoundNumber(i);
 
-            Map<Player, List<Integer>> diceThrowResultMap = new HashMap<>();
+            Map<Player, List<Integer>> diceThrowOneRoundResultMap = new HashMap<>();
 
             for (Player player: playerList) {
                 List<Integer> playResultList = playImpl.playDice();
-                diceThrowResultMap.put(player, playResultList);
+                diceThrowOneRoundResultMap.put(player, playResultList);
             }
 
-            round.setDiceThrowMap(diceThrowResultMap);
+            round.setDiceThrowMap(diceThrowOneRoundResultMap);
             scoreTable.addRoundToList(round);
         }
 
