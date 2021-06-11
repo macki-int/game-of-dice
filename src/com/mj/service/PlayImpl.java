@@ -16,9 +16,9 @@ public class PlayImpl implements Play {
             for (int j = 0; j <2 ; j++) {
                 sumThrowDice += diceThrow();
             }
-            sumDicesChecker.check(sumThrowDice, i);
+            boolean finishTour = sumDicesChecker.check(sumThrowDice, i);
 
-            if(sumDicesChecker.isFinishTour()) {
+            if(finishTour) {
                 numbers.add(sumDicesChecker.getSumThrowDice());
                 return numbers;
             }
