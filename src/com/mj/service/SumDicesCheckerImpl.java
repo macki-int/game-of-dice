@@ -14,7 +14,7 @@ public class SumDicesCheckerImpl implements SumDicesChecker {
 
     @Override
     public void check(int sum, int tour) {
-//TODO: odwrotnie warunek if - najpierw ilość oczek, potem tura
+
         if (tour == 1) {
             if (sum == 7 || sum == 11) {
                 sumThrowDice = sum;
@@ -23,14 +23,14 @@ public class SumDicesCheckerImpl implements SumDicesChecker {
                 sumThrowDice = sum + 48;
                 finishTour = true;
             }
+        }
+
+        if (sum == 5) {
+            sumThrowDice = sum;
+            finishTour = true;
         } else {
-            if (sum == 5) {
-                sumThrowDice = sum;
-                finishTour = true;
-            } else {
-                sumThrowDice = sum + (sum / tour);
-                finishTour = false;
-            }
+            sumThrowDice = sum + (sum / tour);
+            finishTour = false;
         }
     }
 }
