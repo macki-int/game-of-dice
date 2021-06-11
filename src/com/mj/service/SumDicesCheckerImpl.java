@@ -2,35 +2,30 @@ package com.mj.service;
 
 public class SumDicesCheckerImpl implements SumDicesChecker {
     private int sumThrowDice;
-    private boolean finishTour;
 
     public int getSumThrowDice() {
         return sumThrowDice;
     }
 
-    public boolean isFinishTour() {
-        return finishTour;
-    }
-
+    //return boolean
     @Override
-    public void check(int sum, int tour) {
-
+    public boolean check(int sum, int tour) {
         if (tour == 1) {
             if (sum == 7 || sum == 11) {
                 sumThrowDice = sum;
-                finishTour = true;
+                return true;
             } else if (sum == 1 || sum == 12) {
                 sumThrowDice = sum + 48;
-                finishTour = true;
+                return true;
             }
         }
 
         if (sum == 5) {
             sumThrowDice = sum;
-            finishTour = true;
+            return true;
         } else {
             sumThrowDice = sum + (sum / tour);
-            finishTour = false;
+            return false;
         }
     }
 }
