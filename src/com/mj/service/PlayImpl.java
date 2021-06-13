@@ -22,6 +22,7 @@ public class PlayImpl implements Play {
                 numbers.add(sumDicesChecker.getSumThrowDice());
                 return numbers;
             }
+
             numbers.add(sumDicesChecker.getSumThrowDice());
         }
         return numbers;
