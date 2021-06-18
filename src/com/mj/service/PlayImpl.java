@@ -13,15 +13,16 @@ public class PlayImpl implements Play {
 
         int sumThrowDice = 0;
         for (int i = 1; i <= 10; i++) {
-            sumThrowDice = diceThrow();
-            sumThrowDice += diceThrow();
+            for (int j = 0; j <2 ; j++) {
+                sumThrowDice += diceThrow();
+            }
+            boolean finishTour = sumDicesChecker.check(sumThrowDice, i);
 
-            sumDicesChecker.check(sumThrowDice, i);
-
-            if(sumDicesChecker.isFinishTour()) {
+            if(finishTour) {
                 numbers.add(sumDicesChecker.getSumThrowDice());
                 return numbers;
             }
+
             numbers.add(sumDicesChecker.getSumThrowDice());
         }
         return numbers;
