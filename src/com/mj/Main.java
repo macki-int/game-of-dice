@@ -34,11 +34,14 @@ public class Main {
             scoreTable.addRoundToList(round);
         }
 
-
+Set<Player> playerSet = new HashSet<>();
         for (Round r : scoreTable.getRoundList()) {
 //            int idx = r.getDiceThrowMap().size();
 
             System.out.println(r.getRoundNumber() + " " + r.getDiceThrowMap());
+            for (Player p: r.getDiceThrowMap().keySet()                 ) {
+                playerSet.add(p);
+            }
 //            for (int i = 0; i < idx; i++) {
 //                int i1 = i;
 //                r.getDiceThrowMap().keySet()
@@ -56,5 +59,6 @@ public class Main {
 //                });
 //            }
         }
+        System.out.println(playerSet.toString());
     }
 }
